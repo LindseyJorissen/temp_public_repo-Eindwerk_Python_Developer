@@ -1,0 +1,173 @@
+"""
+level_config.py – Bar Duty campaign level definitions.
+
+Each level dict contains:
+  name               – display name for this shift
+  duration_secs      – shift timer (seconds); game ends with COMPLETE when it hits 0
+  victor_lines       – list of dialogue strings from Victor shown before the level
+  primary_cat        – cat key ("oscar" | "mittens" | "hector" | "chili")
+  secondary_cat      – cat key or None; second cat at 65% speed, 75% scale, 1.8× drop interval
+  mice_enabled       – whether mice hazards spawn at all
+  disco_threshold    – score at which disco mode activates (None = never)
+  drunk_threshold    – score at which drunk wobble activates (None = never)
+  reverse_threshold  – score at which controls reverse (None = never)
+  cat_speed_mult     – multiplier on CAT_SPEED_BASE
+  cup_speed_mult     – multiplier on cup speeds
+  drop_mult          – multiplier on drop spawn intervals (>1 = slower = easier)
+  mouse_mult         – multiplier on mouse spawn intervals (>1 = slower = easier)
+"""
+
+LEVELS = {
+    1: {
+        "name":               "First Shift",
+        "duration_secs":      60,
+        "victor_lines":       ["Try not to drop everything immediately."],
+        "primary_cat":        "oscar",
+        "secondary_cat":      None,
+        "mice_enabled":       False,
+        "disco_threshold":    None,
+        "drunk_threshold":    None,
+        "reverse_threshold":  None,
+        "cat_speed_mult":     0.92,
+        "cup_speed_mult":     0.95,
+        "drop_mult":          1.00,
+        "mouse_mult":         1.40,
+    },
+    2: {
+        "name":               "Steady Hands",
+        "duration_secs":      75,
+        "victor_lines":       [],
+        "primary_cat":        "oscar",
+        "secondary_cat":      None,
+        "mice_enabled":       False,
+        "disco_threshold":    None,
+        "drunk_threshold":    None,
+        "reverse_threshold":  None,
+        "cat_speed_mult":     0.88,
+        "cup_speed_mult":     0.92,
+        "drop_mult":          1.05,
+        "mouse_mult":         1.40,
+    },
+    3: {
+        "name":               "Mouse Problem",
+        "duration_secs":      90,
+        "victor_lines":       ["We also have mice.", "Don't ask."],
+        "primary_cat":        "mittens",
+        "secondary_cat":      "oscar",
+        "mice_enabled":       True,
+        "disco_threshold":    None,
+        "drunk_threshold":    None,
+        "reverse_threshold":  None,
+        "cat_speed_mult":     0.95,
+        "cup_speed_mult":     0.95,
+        "drop_mult":          1.00,
+        "mouse_mult":         1.10,
+    },
+    4: {
+        "name":               "Busy Evening",
+        "duration_secs":      105,
+        "victor_lines":       [],
+        "primary_cat":        "mittens",
+        "secondary_cat":      "oscar",
+        "mice_enabled":       True,
+        "disco_threshold":    None,
+        "drunk_threshold":    None,
+        "reverse_threshold":  None,
+        "cat_speed_mult":     1.00,
+        "cup_speed_mult":     1.00,
+        "drop_mult":          1.00,
+        "mouse_mult":         1.00,
+    },
+    5: {
+        "name":               "Disco Night",
+        "duration_secs":      110,
+        "victor_lines":       ["Someone touched the cafe sound system."],
+        "primary_cat":        "mittens",
+        "secondary_cat":      "oscar",
+        "mice_enabled":       True,
+        "disco_threshold":    15,
+        "drunk_threshold":    None,
+        "reverse_threshold":  None,
+        "cat_speed_mult":     1.20,
+        "cup_speed_mult":     1.25,
+        "drop_mult":          0.82,
+        "mouse_mult":         0.85,
+    },
+    6: {
+        "name":               "Double Shift",
+        "duration_secs":      120,
+        "victor_lines":       [],
+        "primary_cat":        "oscar",
+        "secondary_cat":      "hector",
+        "mice_enabled":       True,
+        "disco_threshold":    None,
+        "drunk_threshold":    None,
+        "reverse_threshold":  None,
+        "cat_speed_mult":     1.10,
+        "cup_speed_mult":     1.15,
+        "drop_mult":          0.90,
+        "mouse_mult":         0.90,
+    },
+    7: {
+        "name":               "Last Call",
+        "duration_secs":      100,
+        "victor_lines":       [],
+        "primary_cat":        "hector",
+        "secondary_cat":      "mittens",
+        "mice_enabled":       True,
+        "disco_threshold":    25,
+        "drunk_threshold":    None,
+        "reverse_threshold":  None,
+        "cat_speed_mult":     1.55,
+        "cup_speed_mult":     1.60,
+        "drop_mult":          0.62,
+        "mouse_mult":         0.75,
+    },
+    8: {
+        "name":               "Spilled Secrets",
+        "duration_secs":      150,
+        "victor_lines":       ["Something in this cafe smells concerning."],
+        "primary_cat":        "hector",
+        "secondary_cat":      None,
+        "mice_enabled":       True,
+        "disco_threshold":    None,
+        "drunk_threshold":    10,
+        "reverse_threshold":  10,
+        "cat_speed_mult":     1.30,
+        "cup_speed_mult":     1.35,
+        "drop_mult":          0.80,
+        "mouse_mult":         0.80,
+    },
+    9: {
+        "name":               "Absolute Chaos",
+        "duration_secs":      180,
+        "victor_lines":       [],
+        "primary_cat":        "chili",
+        "secondary_cat":      "hector",
+        "mice_enabled":       True,
+        "disco_threshold":    20,
+        "drunk_threshold":    40,
+        "reverse_threshold":  40,
+        "cat_speed_mult":     1.55,
+        "cup_speed_mult":     1.60,
+        "drop_mult":          0.65,
+        "mouse_mult":         0.70,
+    },
+    10: {
+        "name":               "Closing Time",
+        "duration_secs":      210,
+        "victor_lines":       ["If we survive tonight, drinks are on me."],
+        "primary_cat":        "chili",
+        "secondary_cat":      "mittens",
+        "mice_enabled":       True,
+        "disco_threshold":    15,
+        "drunk_threshold":    25,
+        "reverse_threshold":  25,
+        "cat_speed_mult":     1.70,
+        "cup_speed_mult":     1.80,
+        "drop_mult":          0.55,
+        "mouse_mult":         0.60,
+    },
+}
+
+TOTAL_LEVELS = 10

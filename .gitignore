@@ -1,0 +1,13 @@
+# buildozer build artifacts
+.buildozer/
+bin/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Signing secrets – never commit these
+*.keystore
+*.jks
+key.properties
