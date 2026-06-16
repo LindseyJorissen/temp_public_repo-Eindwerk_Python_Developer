@@ -1,7 +1,7 @@
 [app]
 
 # Title of your application
-title = Mittens the Mischievous Cafe Destroyer
+title = Mittens Cat Cafe Mayhem
 
 # Package name (no spaces, all lowercase)
 package.name = mittens
